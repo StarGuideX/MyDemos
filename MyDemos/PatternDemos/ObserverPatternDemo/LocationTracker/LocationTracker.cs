@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 
 namespace PatternDemos.ObserverPatternDemo.LocationTracker
 {
+    //提供者
     public class LocationTracker : IObservable<Location>
     {
         private List<IObserver<Location>> observers;
@@ -15,7 +16,7 @@ namespace PatternDemos.ObserverPatternDemo.LocationTracker
         {
             observers = new List<IObserver<Location>>();
         }
-        //将观察者对象的引用分配给一个泛型的 List<T> 对象(observers)，从而注册并接收来自 TrackLocation 对象的通知。
+        //将观察者对象的引用分配给一个泛型的 List<T> 对象(observers)，从而注册并接收来自 LocationTrack 对象的通知。
         public IDisposable Subscribe(IObserver<Location> observer)
         {
             if (!observers.Contains(observer))
