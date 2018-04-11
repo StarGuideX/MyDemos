@@ -43,6 +43,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ObserverPatternDemo\LocationTracker\Loaction.cs" />
+    <Compile Include="ObserverPatternDemo\LocationTracker\LocationReporter.cs" />
+    <Compile Include="ObserverPatternDemo\LocationTracker\LocationTracker.cs" />
+    <Compile Include="ObserverPatternDemo\LocationTracker\LocationUnknownException.cs" />
     <Compile Include="ObserverPatternDemo\Weather\ForecastDisplay.cs" />
     <Compile Include="ObserverPatternDemo\Weather\CurrentConditionDialpay.cs" />
     <Compile Include="ObserverPatternDemo\Weather\DisplayElement.cs" />
@@ -64,9 +68,7 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="ObserverPatternDemo\Weatherobservable\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
