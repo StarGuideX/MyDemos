@@ -45,9 +45,19 @@
   <ItemGroup>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="StrategyPatternDemo\Duck.cs" />
+    <Compile Include="StrategyPatternDemo\FlyBehavior.cs" />
+    <Compile Include="StrategyPatternDemo\FlyNoWay.cs" />
+    <Compile Include="StrategyPatternDemo\FlyWithWings.cs" />
+    <Compile Include="StrategyPatternDemo\MallardDuck.cs" />
+    <Compile Include="StrategyPatternDemo\Quack.cs" />
+    <Compile Include="StrategyPatternDemo\QuackBehavior.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="ObserverPatternDemo\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
