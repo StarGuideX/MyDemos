@@ -1,11 +1,9 @@
-﻿using PatternDemos.ObserverPatternDemo.LocationTracker;
+﻿using PatternDemos.FactoryPatternDemo.Pizzas;
+using PatternDemos.FactoryPatternDemo.Store;
+using PatternDemos.ObserverPatternDemo.LocationTracker;
 using PatternDemos.ObserverPatternDemo.Weather;
 using PatternDemos.StrategyPatternDemo;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace PatternDemos
 {
@@ -47,6 +45,20 @@ namespace PatternDemos
             //provider.EndTransmission();
             #endregion
 
+            #region 装饰者模式验证
+            //Beverage beverage = new Espresso();
+            //Console.WriteLine(beverage.GetDescription() + " $" + beverage.cost());
+
+            //Beverage beverage3 = new HouseBlend();
+            //beverage3 = new Mocha(beverage3);
+            //beverage3 = new Whip(beverage3);
+            //Console.WriteLine(beverage3.GetDescription() + " $" + beverage.cost());
+            #endregion
+
+            #region
+            PizzaStore nyPizzaStore = new NYStylePizzaStore();
+            Pizza pizza = nyPizzaStore.OrderPizza("Cheese");
+            #endregion
             Console.ReadLine();
         }
     }
