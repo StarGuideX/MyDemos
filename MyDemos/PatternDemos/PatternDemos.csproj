@@ -43,6 +43,20 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CommandPatternDemo\CeilingFan.cs" />
+    <Compile Include="CommandPatternDemo\Commands\CeilingFanOffCommand.cs" />
+    <Compile Include="CommandPatternDemo\Commands\CeilingFanMediumCommand.cs" />
+    <Compile Include="CommandPatternDemo\Commands\CeilingFanLowCommand.cs" />
+    <Compile Include="CommandPatternDemo\Commands\CeilingFanHighCommand.cs" />
+    <Compile Include="CommandPatternDemo\Commands\Command.cs" />
+    <Compile Include="CommandPatternDemo\Commands\LightOffCommand.cs" />
+    <Compile Include="CommandPatternDemo\Commands\LightOnCommand.cs" />
+    <Compile Include="CommandPatternDemo\Commands\NoCommand.cs" />
+    <Compile Include="CommandPatternDemo\Commands\StereoOffCommand.cs" />
+    <Compile Include="CommandPatternDemo\Commands\StereoOnCommand.cs" />
+    <Compile Include="CommandPatternDemo\Stereo.cs" />
+    <Compile Include="CommandPatternDemo\Light.cs" />
+    <Compile Include="CommandPatternDemo\RemoteControl.cs" />
     <Compile Include="DecoratePatternDemo\Beverage.cs" />
     <Compile Include="DecoratePatternDemo\CondimentDecorate.cs" />
     <Compile Include="DecoratePatternDemo\Espresso.cs" />
@@ -83,6 +97,10 @@
     <Compile Include="ObserverPatternDemo\Weather\WeatherData.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SingletonPatternDemo\ChocolateBoilerDouble.cs" />
+    <Compile Include="SingletonPatternDemo\ChocolateBoilerEagerly.cs" />
+    <Compile Include="SingletonPatternDemo\ChocolateBoiler.cs" />
+    <Compile Include="SingletonPatternDemo\Singleton.cs" />
     <Compile Include="StrategyPatternDemo\Duck.cs" />
     <Compile Include="StrategyPatternDemo\FlyBehavior.cs" />
     <Compile Include="StrategyPatternDemo\FlyNoWay.cs" />

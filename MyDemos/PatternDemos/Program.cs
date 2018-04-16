@@ -1,4 +1,6 @@
-﻿using PatternDemos.FactoryPatternDemo.Pizzas;
+﻿using PatternDemos.CommandPatternDemo;
+using PatternDemos.CommandPatternDemo.Commands;
+using PatternDemos.FactoryPatternDemo.Pizzas;
 using PatternDemos.FactoryPatternDemo.Store;
 using PatternDemos.ObserverPatternDemo.LocationTracker;
 using PatternDemos.ObserverPatternDemo.Weather;
@@ -56,10 +58,61 @@ namespace PatternDemos
             #endregion
 
             #region
-            PizzaStore nyPizzaStore = new NYStylePizzaStore();
-            Pizza pizza = nyPizzaStore.OrderPizza("Cheese");
+            //PizzaStore nyPizzaStore = new NYStylePizzaStore();
+            //Pizza pizza = nyPizzaStore.OrderPizza("Cheese");
             #endregion
+
+            #region 命令模式验证
+            RemoteControl rc = new RemoteControl();
+
+            Light livingRoomLight = new Light("livingRoom");
+            Light kitchenLight = new Light("kitchenLight");
+            Stereo stereo = new Stereo("livingRoom");
+            CeilingFan ceilingFan = new CeilingFan("livingRoom");
+
+            LightOnCommand livingRoomLightOn = new LightOnCommand(livingRoomLight);
+            LightOffCommand livingRoomLightOff = new LightOffCommand(livingRoomLight);
+            LightOnCommand kitchenLightOn = new LightOnCommand(kitchenLight);
+            LightOffCommand kitchenLightOff = new LightOffCommand(kitchenLight);
+            StereoOnCommand stereoOn = new StereoOnCommand(stereo);
+            StereoOffCommand stereoOff = new StereoOffCommand(stereo);
+
+            CeilingFanLowCommand ceilingFanLow = new CeilingFanLowCommand(ceilingFan);
+            CeilingFanMediumCommand ceilingFanMedium = new CeilingFanMediumCommand(ceilingFan);
+            CeilingFanHighCommand ceilingFanHigh = new CeilingFanHighCommand(ceilingFan);
+            CeilingFanOffCommand ceilingFanOff = new CeilingFanOffCommand(ceilingFan);
+
+
+            rc.SetCommand(0, livingRoomLightOn, livingRoomLightOff);
+            rc.SetCommand(1, kitchenLightOn, kitchenLightOff);
+            rc.SetCommand(2, stereoOn, stereoOff);
+            rc.SetCommand(3, ceilingFanLow, ceilingFanOff);
+            rc.SetCommand(4, ceilingFanMedium, ceilingFanOff);
+            rc.SetCommand(5, ceilingFanHigh, ceilingFanOff);
+
+
+            Console.WriteLine(rc.ToString());
+
+            rc.OnButtonWasPushed(0);
+            rc.OffButtonWasPushed(0);
+            rc.OnButtonWasPushed(1);
+            rc.OffButtonWasPushed(1);
+            rc.OnButtonWasPushed(2);
+            rc.OffButtonWasPushed(2);
+            rc.OnButtonWasPushed(3);
+            rc.OffButtonWasPushed(3);
+            rc.OnButtonWasPushed(4);
+            rc.OffButtonWasPushed(4);
+            rc.OnButtonWasPushed(5);
+            rc.OffButtonWasPushed(5);
+            #endregion
+
+
+
             Console.ReadLine();
+
+
+
         }
     }
 }
