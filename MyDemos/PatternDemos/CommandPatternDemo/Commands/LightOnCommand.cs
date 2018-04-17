@@ -13,11 +13,12 @@ namespace PatternDemos.CommandPatternDemo.Commands
         {
             this._light = light;
         }
+        //执行命令
         public void Execute()
         {
             _light.On();
         }
-
+        //撤销
         public void Undo()
         {
             _light.Off();

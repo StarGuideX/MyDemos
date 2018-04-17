@@ -43,6 +43,16 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AdapterPatternDemo\ClassAdapter\Duck.cs" />
+    <Compile Include="AdapterPatternDemo\ClassAdapter\MallardDuck.cs" />
+    <Compile Include="AdapterPatternDemo\ClassAdapter\Turkey.cs" />
+    <Compile Include="AdapterPatternDemo\ClassAdapter\TurkeyAdapter.cs" />
+    <Compile Include="AdapterPatternDemo\ClassAdapter\WildTurkey.cs" />
+    <Compile Include="AdapterPatternDemo\ObjectaAdapter\Duck.cs" />
+    <Compile Include="AdapterPatternDemo\ObjectaAdapter\MallardDuck.cs" />
+    <Compile Include="AdapterPatternDemo\ObjectaAdapter\Turkey.cs" />
+    <Compile Include="AdapterPatternDemo\ObjectaAdapter\TurkeyAdapter.cs" />
+    <Compile Include="AdapterPatternDemo\ObjectaAdapter\WildTurkey.cs" />
     <Compile Include="CommandPatternDemo\CeilingFan.cs" />
     <Compile Include="CommandPatternDemo\Commands\CeilingFanOffCommand.cs" />
     <Compile Include="CommandPatternDemo\Commands\CeilingFanMediumCommand.cs" />
@@ -51,6 +61,7 @@
     <Compile Include="CommandPatternDemo\Commands\Command.cs" />
     <Compile Include="CommandPatternDemo\Commands\LightOffCommand.cs" />
     <Compile Include="CommandPatternDemo\Commands\LightOnCommand.cs" />
+    <Compile Include="CommandPatternDemo\Commands\MacroCommand.cs" />
     <Compile Include="CommandPatternDemo\Commands\NoCommand.cs" />
     <Compile Include="CommandPatternDemo\Commands\StereoOffCommand.cs" />
     <Compile Include="CommandPatternDemo\Commands\StereoOnCommand.cs" />
@@ -63,6 +74,15 @@
     <Compile Include="DecoratePatternDemo\HouseBlend.cs" />
     <Compile Include="DecoratePatternDemo\Mocha.cs" />
     <Compile Include="DecoratePatternDemo\Whip.cs" />
+    <Compile Include="FacadePatternDemo\HomeTheaterFacade.cs" />
+    <Compile Include="FacadePatternDemo\Imp\Amplifier.cs" />
+    <Compile Include="FacadePatternDemo\Imp\CdPlayer.cs" />
+    <Compile Include="FacadePatternDemo\Imp\Projector.cs" />
+    <Compile Include="FacadePatternDemo\Imp\DvdPlayer.cs" />
+    <Compile Include="FacadePatternDemo\Imp\Screen.cs" />
+    <Compile Include="FacadePatternDemo\Imp\PopcornPopper.cs" />
+    <Compile Include="FacadePatternDemo\Imp\TheaterLights.cs" />
+    <Compile Include="FacadePatternDemo\Imp\Tuner.cs" />
     <Compile Include="FactoryPatternDemo\IngredientFactory\NYPizzaIngredientFactory.cs" />
     <Compile Include="FactoryPatternDemo\IngredientFactory\PizzaIngredientFactory.cs" />
     <Compile Include="FactoryPatternDemo\Ingredient\FreshClams.cs" />

@@ -16,7 +16,7 @@ namespace PatternDemos.CommandPatternDemo
         {
             _onCommands = new Command[7];
             _offCommands = new Command[7];
-
+            //创建空命令
             Command nc = new NoCommand();
             for (int i = 0; i < _onCommands.Count(); i++)
             {
@@ -49,8 +49,9 @@ namespace PatternDemos.CommandPatternDemo
             _offCommands[slot].Execute();
             undoCommand = _offCommands[slot];
         }
-
-        public void UndoButtonWasPushed() {
+        //撤销按钮
+        public void UndoButtonWasPushed()
+        {
             undoCommand.Undo();
         }
 
