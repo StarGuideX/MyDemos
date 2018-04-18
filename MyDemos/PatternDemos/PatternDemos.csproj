@@ -75,14 +75,14 @@
     <Compile Include="DecoratePatternDemo\Mocha.cs" />
     <Compile Include="DecoratePatternDemo\Whip.cs" />
     <Compile Include="FacadePatternDemo\HomeTheaterFacade.cs" />
-    <Compile Include="FacadePatternDemo\Imp\Amplifier.cs" />
-    <Compile Include="FacadePatternDemo\Imp\CdPlayer.cs" />
-    <Compile Include="FacadePatternDemo\Imp\Projector.cs" />
-    <Compile Include="FacadePatternDemo\Imp\DvdPlayer.cs" />
-    <Compile Include="FacadePatternDemo\Imp\Screen.cs" />
-    <Compile Include="FacadePatternDemo\Imp\PopcornPopper.cs" />
-    <Compile Include="FacadePatternDemo\Imp\TheaterLights.cs" />
-    <Compile Include="FacadePatternDemo\Imp\Tuner.cs" />
+    <Compile Include="FacadePatternDemo\Model\Amplifier.cs" />
+    <Compile Include="FacadePatternDemo\Model\CdPlayer.cs" />
+    <Compile Include="FacadePatternDemo\Model\Projector.cs" />
+    <Compile Include="FacadePatternDemo\Model\DvdPlayer.cs" />
+    <Compile Include="FacadePatternDemo\Model\Screen.cs" />
+    <Compile Include="FacadePatternDemo\Model\PopcornPopper.cs" />
+    <Compile Include="FacadePatternDemo\Model\TheaterLights.cs" />
+    <Compile Include="FacadePatternDemo\Model\Tuner.cs" />
     <Compile Include="FactoryPatternDemo\IngredientFactory\NYPizzaIngredientFactory.cs" />
     <Compile Include="FactoryPatternDemo\IngredientFactory\PizzaIngredientFactory.cs" />
     <Compile Include="FactoryPatternDemo\Ingredient\FreshClams.cs" />
@@ -128,6 +128,11 @@
     <Compile Include="StrategyPatternDemo\MallardDuck.cs" />
     <Compile Include="StrategyPatternDemo\Quack.cs" />
     <Compile Include="StrategyPatternDemo\QuackBehavior.cs" />
+    <Compile Include="TemplateMethodDemo\CaffeineBeverage.cs" />
+    <Compile Include="TemplateMethodDemo\Coffee.cs" />
+    <Compile Include="TemplateMethodDemo\Hook\CaffeineBeverageWithHook.cs" />
+    <Compile Include="TemplateMethodDemo\Hook\CoffeeWithHook.cs" />
+    <Compile Include="TemplateMethodDemo\Tea.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

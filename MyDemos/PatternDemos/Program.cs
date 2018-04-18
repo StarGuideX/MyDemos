@@ -8,6 +8,10 @@ using PatternDemos.StrategyPatternDemo;
 using oa = PatternDemos.AdapterPatternDemo.ObjectaAdapter;
 using ca = PatternDemos.AdapterPatternDemo.ClassAdapter;
 using System;
+using PatternDemos.FacadePatternDemo;
+using PatternDemos.FacadePatternDemo.Model;
+using PatternDemos.TemplateMethodDemo;
+using PatternDemos.TemplateMethodDemo.Hook;
 
 namespace PatternDemos
 {
@@ -122,23 +126,41 @@ namespace PatternDemos
             //rc2.OffButtonWasPushed(0);
             #endregion
 
-            #region
-            oa.MallardDuck duck = new oa.MallardDuck();
-            oa.WildTurkey turkey = new oa.WildTurkey();
-            oa.Duck turkeyAdaper = new oa.TurkeyAdapter(turkey);
-            Console.WriteLine("------火鸡------");
-            turkey.Gobble();
-            turkey.Fly();
-            Console.WriteLine("------鸭子------");
-            testDuck(duck);
-            Console.WriteLine("------火鸡适配器------");
-            testDuck(turkeyAdaper);
-            Console.WriteLine("------火鸡适配器1111------");
-            ca.Duck x = new ca.TurkeyAdapter();
-            x.Fly();
-            x.Quack();
+            #region 适配器模式
+            //oa.MallardDuck duck = new oa.MallardDuck();
+            //oa.WildTurkey turkey = new oa.WildTurkey();
+            //oa.Duck turkeyAdaper = new oa.TurkeyAdapter(turkey);
+            //Console.WriteLine("------火鸡------");
+            //turkey.Gobble();
+            //turkey.Fly();
+            //Console.WriteLine("------鸭子------");
+            //testDuck(duck);
+            //Console.WriteLine("------火鸡适配器（对象）------");
+            //testDuck(turkeyAdaper);
+            //Console.WriteLine("------火鸡适配器（类）------");
+            //ca.Duck x = new ca.TurkeyAdapter();
+            //x.Fly();
+            //x.Quack();
+            #endregion
 
+            #region 外观模式
+            //HomeTheaterFacade htf = new HomeTheaterFacade(new Amplifier(), new Tuner(), new DvdPlayer(),
+            //    new CdPlayer(), new Projector(), new TheaterLights(),
+            //    new Screen(), new PopcornPopper());
 
+            //htf.WacthMovie("变形金刚");
+            //htf.EndMovie();
+            #endregion
+
+            #region 模板方法模式
+            //CaffeineBeverage tea = new Tea();
+            //tea.PrepareRecipe();
+
+            //CaffeineBeverage coffee = new Coffee();
+            //coffee.PrepareRecipe();
+            //Console.WriteLine("------带Hook的------");
+            //CaffeineBeverageWithHook coffeewh = new CoffeeWithHook();
+            //coffeewh.PrepareRecipe();
             #endregion
 
             Console.ReadLine();

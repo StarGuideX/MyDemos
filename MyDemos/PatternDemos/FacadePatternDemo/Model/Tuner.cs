@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace PatternDemos.FacadePatternDemo.Imp
+namespace PatternDemos.FacadePatternDemo.Model
 {
-    public interface DvdPlayer
+    public class Tuner
     {
     }
 }

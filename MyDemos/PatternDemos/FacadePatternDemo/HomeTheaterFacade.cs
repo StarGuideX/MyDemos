@@ -1,4 +1,4 @@
-﻿using PatternDemos.FacadePatternDemo.Imp;
+﻿using PatternDemos.FacadePatternDemo.Model;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -32,10 +32,33 @@ namespace PatternDemos.FacadePatternDemo
             this._popper = popper;
         }
 
-        public void wacthMovie(String movie)
+        public void WacthMovie(String movie)
         {
             Console.WriteLine("开始观看电影 " + movie + "...");
-            //_popper.
+            _popper.On();
+            _popper.Pop();
+            _lights.Dim(10);
+            _screen.Dowm();
+            _projector.On();
+            _projector.WideScreenMode();
+            _amp.On();
+            _amp.SetDvd(_dvd);
+            _amp.SetSurroundSound();
+            _amp.SetVolume(5);
+            _dvd.On();
+            _dvd.Play(movie);
+        }
+
+        public void EndMovie() {
+            Console.WriteLine("结束电影...");
+            _popper.Off();
+            _lights.On();
+            _screen.Up();
+            _projector.Off();
+            _amp.Off();
+            _dvd.Stop();
+            _dvd.Eject();
+            _dvd.Off();
         }
     }
 }
