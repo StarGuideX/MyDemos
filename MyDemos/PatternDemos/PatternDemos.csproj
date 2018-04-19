@@ -103,6 +103,9 @@
     <Compile Include="FactoryPatternDemo\Pizzas\Pizza.cs" />
     <Compile Include="FactoryPatternDemo\Store\PizzaStore.cs" />
     <Compile Include="FactoryPatternDemo\Pizzas\CheesePizza.cs" />
+    <Compile Include="IteratorPatternDemo\MenuEnum.cs" />
+    <Compile Include="IteratorPatternDemo\Menu.cs" />
+    <Compile Include="IteratorPatternDemo\MenuItem.cs" />
     <Compile Include="ObserverPatternDemo\LocationTracker\Loaction.cs" />
     <Compile Include="ObserverPatternDemo\LocationTracker\LocationReporter.cs" />
     <Compile Include="ObserverPatternDemo\LocationTracker\LocationTracker.cs" />

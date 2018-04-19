@@ -12,6 +12,8 @@ using PatternDemos.FacadePatternDemo;
 using PatternDemos.FacadePatternDemo.Model;
 using PatternDemos.TemplateMethodDemo;
 using PatternDemos.TemplateMethodDemo.Hook;
+using PatternDemos.IteratorPatternDemo;
+using System.Collections;
 
 namespace PatternDemos
 {
@@ -163,9 +165,26 @@ namespace PatternDemos
             //coffeewh.PrepareRecipe();
             #endregion
 
+            #region
+            MenuItem item1 = new MenuItem("name1", "des1", true, 0.1);
+            MenuItem item2 = new MenuItem("name2", "des2", false, 0.2);
+            MenuItem item3 = new MenuItem("name3", "des3", true, 0.3);
+            MenuItem item4 = new MenuItem("name4", "des4", false, 0.4);
+
+
+            MenuItem[] test = { item1, item2, item3, item4 };
+            IEnumerator x = new Menu(test).GetEnumerator();
+            WriteMenu(x);
+            #endregion
+
+
             Console.ReadLine();
         }
-
+        static void WriteMenu(IEnumerator iEnumerator) {
+            while (iEnumerator.MoveNext()) {
+                Console.WriteLine(iEnumerator.Current.ToString()); 
+            }
+        }
         static void testDuck(oa.Duck duck)
         {
             duck.Quack();
