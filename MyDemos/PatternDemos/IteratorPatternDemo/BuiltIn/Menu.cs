@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace PatternDemos.IteratorPatternDemo
+namespace PatternDemos.IteratorPatternDemo.BuiltIn
 {
     public class Menu : IEnumerable
     {

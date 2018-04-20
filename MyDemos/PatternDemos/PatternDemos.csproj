@@ -68,6 +68,9 @@
     <Compile Include="CommandPatternDemo\Stereo.cs" />
     <Compile Include="CommandPatternDemo\Light.cs" />
     <Compile Include="CommandPatternDemo\RemoteControl.cs" />
+    <Compile Include="CompositePatternDemo\Menu.cs" />
+    <Compile Include="CompositePatternDemo\MenuComponent.cs" />
+    <Compile Include="CompositePatternDemo\MenuItem.cs" />
     <Compile Include="DecoratePatternDemo\Beverage.cs" />
     <Compile Include="DecoratePatternDemo\CondimentDecorate.cs" />
     <Compile Include="DecoratePatternDemo\Espresso.cs" />
@@ -103,9 +106,15 @@
     <Compile Include="FactoryPatternDemo\Pizzas\Pizza.cs" />
     <Compile Include="FactoryPatternDemo\Store\PizzaStore.cs" />
     <Compile Include="FactoryPatternDemo\Pizzas\CheesePizza.cs" />
-    <Compile Include="IteratorPatternDemo\MenuEnum.cs" />
-    <Compile Include="IteratorPatternDemo\Menu.cs" />
-    <Compile Include="IteratorPatternDemo\MenuItem.cs" />
+    <Compile Include="IteratorPatternDemo\BuiltIn\MenuEnum.cs" />
+    <Compile Include="IteratorPatternDemo\BuiltIn\Menu.cs" />
+    <Compile Include="IteratorPatternDemo\BuiltIn\MenuItem.cs" />
+    <Compile Include="IteratorPatternDemo\MenuDemo\PancakeHouseMenu.cs" />
+    <Compile Include="IteratorPatternDemo\MenuDemo\DinerMenu.cs" />
+    <Compile Include="IteratorPatternDemo\MenuDemo\PancakeHouseMenuIEnumerator.cs" />
+    <Compile Include="IteratorPatternDemo\MenuDemo\DinerMenuIEnumerator.cs" />
+    <Compile Include="IteratorPatternDemo\MenuDemo\MenuItem.cs" />
+    <Compile Include="IteratorPatternDemo\MenuDemo\Waitress.cs" />
     <Compile Include="ObserverPatternDemo\LocationTracker\Loaction.cs" />
     <Compile Include="ObserverPatternDemo\LocationTracker\LocationReporter.cs" />
     <Compile Include="ObserverPatternDemo\LocationTracker\LocationTracker.cs" />
@@ -124,6 +133,7 @@
     <Compile Include="SingletonPatternDemo\ChocolateBoilerEagerly.cs" />
     <Compile Include="SingletonPatternDemo\ChocolateBoiler.cs" />
     <Compile Include="SingletonPatternDemo\Singleton.cs" />
+    <Compile Include="StatePatternDemo\GumballMachine.cs" />
     <Compile Include="StrategyPatternDemo\Duck.cs" />
     <Compile Include="StrategyPatternDemo\FlyBehavior.cs" />
     <Compile Include="StrategyPatternDemo\FlyNoWay.cs" />

@@ -42,7 +42,7 @@ namespace PatternDemos.TemplateMethodDemo.Hook
             }
             catch (IOException ioe)
             {
-                Console.WriteLine("IO 错误");
+                Console.WriteLine("IO 错误" + ioe.InnerException);
             }
             if (answer == null)
             {

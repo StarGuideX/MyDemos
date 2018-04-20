@@ -14,6 +14,8 @@ using PatternDemos.TemplateMethodDemo;
 using PatternDemos.TemplateMethodDemo.Hook;
 using PatternDemos.IteratorPatternDemo;
 using System.Collections;
+using BI = PatternDemos.IteratorPatternDemo.BuiltIn;
+using md = PatternDemos.IteratorPatternDemo.MenuDemo;
 
 namespace PatternDemos
 {
@@ -165,24 +167,44 @@ namespace PatternDemos
             //coffeewh.PrepareRecipe();
             #endregion
 
-            #region
-            MenuItem item1 = new MenuItem("name1", "des1", true, 0.1);
-            MenuItem item2 = new MenuItem("name2", "des2", false, 0.2);
-            MenuItem item3 = new MenuItem("name3", "des3", true, 0.3);
-            MenuItem item4 = new MenuItem("name4", "des4", false, 0.4);
+            #region 迭代器验证
+            md.MenuItem mdItem1 = new md.MenuItem("mdName1", "des1", true, 0.1);
+            md.MenuItem mdItem2 = new md.MenuItem("mdName2", "des2", false, 0.2);
+            md.MenuItem mdItem3 = new md.MenuItem("mdName3", "des3", true, 0.3);
+            md.MenuItem mdItem4 = new md.MenuItem("mdName4", "des4", false, 0.4);
+
+            md.MenuItem[] menu1 = { mdItem1, mdItem2, mdItem3, mdItem4 };
+
+            md.MenuItem dinerItem1 = new md.MenuItem("dinerName1", "des1", true, 0.1);
+            md.MenuItem dinerItem2 = new md.MenuItem("dinerName2", "des2", false, 0.2);
+            md.MenuItem dinerItem3 = new md.MenuItem("dinerName3", "des3", true, 0.3);
+            md.MenuItem dinerItem4 = new md.MenuItem("dinerName4", "des4", false, 0.4);
+            md.MenuItem[] menu2 = { dinerItem1, dinerItem2, dinerItem3, dinerItem4 };
+            md.Waitress waitress = new md.Waitress(new md.PancakeHouseMenu(menu1), new md.DinerMenu(menu2));
+            waitress.PrintMenu();
+
+            #endregion
+
+            #region C#迭代器验证
+            //BI.MenuItem item1 = new BI.MenuItem("name1", "des1", true, 0.1);
+            //BI.MenuItem item2 = new BI.MenuItem("name2", "des2", false, 0.2);
+            //BI.MenuItem item3 = new BI.MenuItem("name3", "des3", true, 0.3);
+            //BI.MenuItem item4 = new BI.MenuItem("name4", "des4", false, 0.4);
 
 
-            MenuItem[] test = { item1, item2, item3, item4 };
-            IEnumerator x = new Menu(test).GetEnumerator();
-            WriteMenu(x);
+            //BI.MenuItem[] sharpEnum = { item1, item2, item3, item4 };
+            //IEnumerator sharpEnumer = new BI.Menu(sharpEnum).GetEnumerator();
+            //WriteMenu(sharpEnumer);
             #endregion
 
 
             Console.ReadLine();
         }
-        static void WriteMenu(IEnumerator iEnumerator) {
-            while (iEnumerator.MoveNext()) {
-                Console.WriteLine(iEnumerator.Current.ToString()); 
+        static void WriteMenu(IEnumerator iEnumerator)
+        {
+            while (iEnumerator.MoveNext())
+            {
+                Console.WriteLine(iEnumerator.Current.ToString());
             }
         }
         static void testDuck(oa.Duck duck)
