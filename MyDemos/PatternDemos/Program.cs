@@ -16,6 +16,7 @@ using PatternDemos.IteratorPatternDemo;
 using System.Collections;
 using BI = PatternDemos.IteratorPatternDemo.BuiltIn;
 using md = PatternDemos.IteratorPatternDemo.MenuDemo;
+using PatternDemos.StatePatternDemo;
 
 namespace PatternDemos
 {
@@ -168,20 +169,20 @@ namespace PatternDemos
             #endregion
 
             #region 迭代器验证
-            md.MenuItem mdItem1 = new md.MenuItem("mdName1", "des1", true, 0.1);
-            md.MenuItem mdItem2 = new md.MenuItem("mdName2", "des2", false, 0.2);
-            md.MenuItem mdItem3 = new md.MenuItem("mdName3", "des3", true, 0.3);
-            md.MenuItem mdItem4 = new md.MenuItem("mdName4", "des4", false, 0.4);
+            //md.MenuItem mdItem1 = new md.MenuItem("mdName1", "des1", true, 0.1);
+            //md.MenuItem mdItem2 = new md.MenuItem("mdName2", "des2", false, 0.2);
+            //md.MenuItem mdItem3 = new md.MenuItem("mdName3", "des3", true, 0.3);
+            //md.MenuItem mdItem4 = new md.MenuItem("mdName4", "des4", false, 0.4);
 
-            md.MenuItem[] menu1 = { mdItem1, mdItem2, mdItem3, mdItem4 };
+            //md.MenuItem[] menu1 = { mdItem1, mdItem2, mdItem3, mdItem4 };
 
-            md.MenuItem dinerItem1 = new md.MenuItem("dinerName1", "des1", true, 0.1);
-            md.MenuItem dinerItem2 = new md.MenuItem("dinerName2", "des2", false, 0.2);
-            md.MenuItem dinerItem3 = new md.MenuItem("dinerName3", "des3", true, 0.3);
-            md.MenuItem dinerItem4 = new md.MenuItem("dinerName4", "des4", false, 0.4);
-            md.MenuItem[] menu2 = { dinerItem1, dinerItem2, dinerItem3, dinerItem4 };
-            md.Waitress waitress = new md.Waitress(new md.PancakeHouseMenu(menu1), new md.DinerMenu(menu2));
-            waitress.PrintMenu();
+            //md.MenuItem dinerItem1 = new md.MenuItem("dinerName1", "des1", true, 0.1);
+            //md.MenuItem dinerItem2 = new md.MenuItem("dinerName2", "des2", false, 0.2);
+            //md.MenuItem dinerItem3 = new md.MenuItem("dinerName3", "des3", true, 0.3);
+            //md.MenuItem dinerItem4 = new md.MenuItem("dinerName4", "des4", false, 0.4);
+            //md.MenuItem[] menu2 = { dinerItem1, dinerItem2, dinerItem3, dinerItem4 };
+            //md.Waitress waitress = new md.Waitress(new md.PancakeHouseMenu(menu1), new md.DinerMenu(menu2));
+            //waitress.PrintMenu();
 
             #endregion
 
@@ -197,7 +198,35 @@ namespace PatternDemos
             //WriteMenu(sharpEnumer);
             #endregion
 
+            #region
+            GumballMachine gumballMachine = new GumballMachine(5);
+            Console.WriteLine(gumballMachine);
 
+            gumballMachine.InsertQuarter();
+            gumballMachine.TurnCrank();
+            Console.WriteLine(gumballMachine);
+
+            gumballMachine.InsertQuarter();
+            gumballMachine.EjectQuarter();
+            gumballMachine.TurnCrank();
+            Console.WriteLine(gumballMachine);
+
+            gumballMachine.InsertQuarter();
+            gumballMachine.TurnCrank();
+            gumballMachine.InsertQuarter();
+            gumballMachine.TurnCrank();
+            gumballMachine.EjectQuarter();
+            Console.WriteLine(gumballMachine);
+
+            gumballMachine.InsertQuarter();
+            gumballMachine.InsertQuarter();
+            gumballMachine.TurnCrank();
+            gumballMachine.InsertQuarter();
+            gumballMachine.TurnCrank();
+            gumballMachine.InsertQuarter();
+            gumballMachine.TurnCrank();
+            Console.WriteLine(gumballMachine);
+            #endregion
             Console.ReadLine();
         }
         static void WriteMenu(IEnumerator iEnumerator)

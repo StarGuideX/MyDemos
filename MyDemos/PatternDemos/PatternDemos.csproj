@@ -71,6 +71,7 @@
     <Compile Include="CompositePatternDemo\Menu.cs" />
     <Compile Include="CompositePatternDemo\MenuComponent.cs" />
     <Compile Include="CompositePatternDemo\MenuItem.cs" />
+    <Compile Include="CompoundPatternDemo\IQuackable.cs" />
     <Compile Include="DecoratePatternDemo\Beverage.cs" />
     <Compile Include="DecoratePatternDemo\CondimentDecorate.cs" />
     <Compile Include="DecoratePatternDemo\Espresso.cs" />
@@ -129,11 +130,18 @@
     <Compile Include="ObserverPatternDemo\Weather\WeatherData.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ProxyPatternDemo\Machine.cs" />
     <Compile Include="SingletonPatternDemo\ChocolateBoilerDouble.cs" />
     <Compile Include="SingletonPatternDemo\ChocolateBoilerEagerly.cs" />
     <Compile Include="SingletonPatternDemo\ChocolateBoiler.cs" />
     <Compile Include="SingletonPatternDemo\Singleton.cs" />
     <Compile Include="StatePatternDemo\GumballMachine.cs" />
+    <Compile Include="StatePatternDemo\HasQuarterState.cs" />
+    <Compile Include="StatePatternDemo\NoQuarterState.cs" />
+    <Compile Include="StatePatternDemo\SoldOutState.cs" />
+    <Compile Include="StatePatternDemo\SoldState.cs" />
+    <Compile Include="StatePatternDemo\State.cs" />
+    <Compile Include="StatePatternDemo\WinnerState.cs" />
     <Compile Include="StrategyPatternDemo\Duck.cs" />
     <Compile Include="StrategyPatternDemo\FlyBehavior.cs" />
     <Compile Include="StrategyPatternDemo\FlyNoWay.cs" />
