@@ -17,6 +17,9 @@ using System.Collections;
 using BI = PatternDemos.IteratorPatternDemo.BuiltIn;
 using md = PatternDemos.IteratorPatternDemo.MenuDemo;
 using PatternDemos.StatePatternDemo;
+using PatternDemos.CompoundPatternDemo.Entity;
+using PatternDemos.CompoundPatternDemo.Factory;
+using PatternDemos.CompoundPatternDemo.Adapter;
 
 namespace PatternDemos
 {
@@ -198,34 +201,40 @@ namespace PatternDemos
             //WriteMenu(sharpEnumer);
             #endregion
 
-            #region
-            GumballMachine gumballMachine = new GumballMachine(5);
-            Console.WriteLine(gumballMachine);
+            #region 状态模式验证
+            //GumballMachine gumballMachine = new GumballMachine(5);
+            //Console.WriteLine(gumballMachine);
 
-            gumballMachine.InsertQuarter();
-            gumballMachine.TurnCrank();
-            Console.WriteLine(gumballMachine);
+            //gumballMachine.InsertQuarter();
+            //gumballMachine.TurnCrank();
+            //Console.WriteLine(gumballMachine);
 
-            gumballMachine.InsertQuarter();
-            gumballMachine.EjectQuarter();
-            gumballMachine.TurnCrank();
-            Console.WriteLine(gumballMachine);
+            //gumballMachine.InsertQuarter();
+            //gumballMachine.EjectQuarter();
+            //gumballMachine.TurnCrank();
+            //Console.WriteLine(gumballMachine);
 
-            gumballMachine.InsertQuarter();
-            gumballMachine.TurnCrank();
-            gumballMachine.InsertQuarter();
-            gumballMachine.TurnCrank();
-            gumballMachine.EjectQuarter();
-            Console.WriteLine(gumballMachine);
+            //gumballMachine.InsertQuarter();
+            //gumballMachine.TurnCrank();
+            //gumballMachine.InsertQuarter();
+            //gumballMachine.TurnCrank();
+            //gumballMachine.EjectQuarter();
+            //Console.WriteLine(gumballMachine);
 
-            gumballMachine.InsertQuarter();
-            gumballMachine.InsertQuarter();
-            gumballMachine.TurnCrank();
-            gumballMachine.InsertQuarter();
-            gumballMachine.TurnCrank();
-            gumballMachine.InsertQuarter();
-            gumballMachine.TurnCrank();
-            Console.WriteLine(gumballMachine);
+            //gumballMachine.InsertQuarter();
+            //gumballMachine.InsertQuarter();
+            //gumballMachine.TurnCrank();
+            //gumballMachine.InsertQuarter();
+            //gumballMachine.TurnCrank();
+            //gumballMachine.InsertQuarter();
+            //gumballMachine.TurnCrank();
+            //Console.WriteLine(gumballMachine);
+            #endregion
+
+            #region 复合模式验证
+            DuckSimuLator duckSimuLator = new DuckSimuLator();
+            AbstractDuckFactory duckFactory = new CountingDuckFactory();
+            duckSimuLator.Simnulate(duckFactory);
             #endregion
             Console.ReadLine();
         }
@@ -241,5 +250,39 @@ namespace PatternDemos
             duck.Quack();
             duck.Fly();
         }
+
+        internal class DuckSimuLator
+        {
+            internal void Simnulate(AbstractDuckFactory duckFactory)
+            {
+                //1.使用工厂创建鸭子
+                //2.使用装饰者，创建被装饰的鸭子
+                //new QuackCounter(new BlueheadDuck());
+                //new QuackCounter(new PinkheadDuck());
+                //new QuackCounter(new DuckCall());
+                //new QuackCounter(new RubberDuck());
+                IQuackable blueheadDuck = duckFactory.CreateBlueheadDuck();
+                IQuackable pinkheadDuck = duckFactory.CreatePinkheadDuck();
+                IQuackable duckCall = duckFactory.CreateDuckCall();
+                IQuackable rubberDuck = duckFactory.CreateRubberDuck();
+                //使用适配器模式创建一个会鹅叫的鸭子。
+                IQuackable gooseDuck = new GooseAdapter(new Goose());
+                Console.WriteLine("------鸭子模拟器-------");
+                Simnulate(blueheadDuck);
+                Simnulate(pinkheadDuck);
+                Simnulate(duckCall);
+                Simnulate(rubberDuck);
+                Simnulate(gooseDuck);
+
+                Console.WriteLine("鸭子叫的次数为：" + QuackCounter.NumberOfQuacks);
+            }
+
+            void Simnulate(IQuackable duck)
+            {
+                duck.Quack();
+            }
+        }
+
+
     }
 }
