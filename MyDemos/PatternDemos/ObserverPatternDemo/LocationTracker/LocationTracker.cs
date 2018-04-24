@@ -45,7 +45,7 @@ namespace PatternDemos.ObserverPatternDemo.LocationTracker
             }
         }
         //调用每个观察者的OnNext方法  
-        public void TrackLocation(Nullable<Location> loc)
+        public void TrackLocation(Location? loc)
         {
             foreach (var item in observers)
             {

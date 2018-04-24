@@ -17,18 +17,100 @@ namespace PatternDemos.StatePatternDemo
 
         private int _count = 0;
 
-        public State State { get => _state; set => _state = value; }
-        public State SoldOutState { get => _soldOutState; set => _soldOutState = value; }
-        public State NoQuarterState { get => _noQuarterState; set => _noQuarterState = value; }
-        public State HasQuarterState { get => _hasQuarterState; set => _hasQuarterState = value; }
-        public State SoldState { get => _soldState; set => _soldState = value; }
+        public State SoldOutState
+        {
+            get
+            {
+                return _soldOutState;
+            }
 
-        public int Count { get => _count; set => _count = value; }
-        public State WinnerState { get => _WinnerState; set => _WinnerState = value; }
+            set
+            {
+                _soldOutState = value;
+            }
+        }
+
+        public State NoQuarterState
+        {
+            get
+            {
+                return _noQuarterState;
+            }
+
+            set
+            {
+                _noQuarterState = value;
+            }
+        }
+
+        public State HasQuarterState
+        {
+            get
+            {
+                return _hasQuarterState;
+            }
+
+            set
+            {
+                _hasQuarterState = value;
+            }
+        }
+
+        public State SoldState
+        {
+            get
+            {
+                return _soldState;
+            }
+
+            set
+            {
+                _soldState = value;
+            }
+        }
+
+        public State WinnerState
+        {
+            get
+            {
+                return _WinnerState;
+            }
+
+            set
+            {
+                _WinnerState = value;
+            }
+        }
+
+        public State State
+        {
+            get
+            {
+                return _state;
+            }
+
+            set
+            {
+                _state = value;
+            }
+        }
+
+        public int Count
+        {
+            get
+            {
+                return _count;
+            }
+
+            set
+            {
+                _count = value;
+            }
+        }
 
         public GumballMachine(int count)
         {
-            _state = _soldOutState;
+            State = SoldOutState;
             SoldOutState = new SoldOutState(this);
             NoQuarterState = new NoQuarterState(this);
             HasQuarterState = new HasQuarterState(this);
@@ -44,26 +126,26 @@ namespace PatternDemos.StatePatternDemo
         //放入25美分
         public void InsertQuarter()
         {
-            _state.InsertQuarter();
+            State.InsertQuarter();
         }
         //退款
         public void EjectQuarter()
         {
-            _state.EjectQuarter();
+            State.EjectQuarter();
         }
         //转动摇杆获取糖果
         public void TurnCrank()
         {
-            _state.TurnCrank();
-            _state.Dispense();
+            State.TurnCrank();
+            State.Dispense();
         }
-        
+
         public void ReleaseBall()
         {
             Console.WriteLine("");
-            if (_count != 0)
+            if (Count != 0)
             {
-                _count = _count - 1;
+                Count = Count - 1;
             }
         }
     }

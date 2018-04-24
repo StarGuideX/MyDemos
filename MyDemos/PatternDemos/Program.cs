@@ -20,6 +20,8 @@ using PatternDemos.StatePatternDemo;
 using PatternDemos.CompoundPatternDemo.Entity;
 using PatternDemos.CompoundPatternDemo.Factory;
 using PatternDemos.CompoundPatternDemo.Adapter;
+using PatternDemos.CompoundPatternDemo.CompositeIterator;
+using PatternDemos.CompoundPatternDemo.Observer;
 
 namespace PatternDemos
 {
@@ -251,28 +253,33 @@ namespace PatternDemos
             duck.Fly();
         }
 
+        //复合模式
         internal class DuckSimuLator
         {
             internal void Simnulate(AbstractDuckFactory duckFactory)
             {
                 //1.使用工厂创建鸭子
                 //2.使用装饰者，创建被装饰的鸭子
-                //new QuackCounter(new BlueheadDuck());
-                //new QuackCounter(new PinkheadDuck());
-                //new QuackCounter(new DuckCall());
-                //new QuackCounter(new RubberDuck());
                 IQuackable blueheadDuck = duckFactory.CreateBlueheadDuck();
                 IQuackable pinkheadDuck = duckFactory.CreatePinkheadDuck();
                 IQuackable duckCall = duckFactory.CreateDuckCall();
                 IQuackable rubberDuck = duckFactory.CreateRubberDuck();
                 //使用适配器模式创建一个会鹅叫的鸭子。
                 IQuackable gooseDuck = new GooseAdapter(new Goose());
+                IQuackable[] quacks = { blueheadDuck, pinkheadDuck, duckCall, rubberDuck, gooseDuck };
+                //使用组合模式和迭代器模式
+                Flock flockOfDucks = new Flock(quacks);
+
                 Console.WriteLine("------鸭子模拟器-------");
-                Simnulate(blueheadDuck);
-                Simnulate(pinkheadDuck);
-                Simnulate(duckCall);
-                Simnulate(rubberDuck);
-                Simnulate(gooseDuck);
+                Simnulate(flockOfDucks);
+
+                Console.WriteLine("------观察开始-------");
+                //使用观察者模式
+                IQuackableObservable provider = new IQuackableObservable();
+                IQuackableObserver reporter1 = new IQuackableObserver();
+                reporter1.Subscribe(provider);
+                provider.Notify(duckFactory.CreateRubberDuck());
+                Console.WriteLine("------观察结束-------");
 
                 Console.WriteLine("鸭子叫的次数为：" + QuackCounter.NumberOfQuacks);
             }

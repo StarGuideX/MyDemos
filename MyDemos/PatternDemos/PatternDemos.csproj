@@ -73,6 +73,8 @@
     <Compile Include="CompositePatternDemo\MenuItem.cs" />
     <Compile Include="CompoundPatternDemo\Adapter\Goose.cs" />
     <Compile Include="CompoundPatternDemo\Adapter\GooseAdapter.cs" />
+    <Compile Include="CompoundPatternDemo\CompositeIterator\Flock.cs" />
+    <Compile Include="CompoundPatternDemo\CompositeIterator\FlockEnum.cs" />
     <Compile Include="CompoundPatternDemo\Entity\BlueheadDuck.cs" />
     <Compile Include="CompoundPatternDemo\Entity\DuckCall.cs" />
     <Compile Include="CompoundPatternDemo\Entity\IQuackable.cs" />
@@ -82,6 +84,8 @@
     <Compile Include="CompoundPatternDemo\Factory\AbstractDuckFactory.cs" />
     <Compile Include="CompoundPatternDemo\Factory\CountingDuckFactory.cs" />
     <Compile Include="CompoundPatternDemo\Factory\DuckFactory.cs" />
+    <Compile Include="CompoundPatternDemo\Observer\IQuackableObservable.cs" />
+    <Compile Include="CompoundPatternDemo\Observer\IQuackableObserver.cs" />
     <Compile Include="DecoratePatternDemo\Beverage.cs" />
     <Compile Include="DecoratePatternDemo\CondimentDecorate.cs" />
     <Compile Include="DecoratePatternDemo\Espresso.cs" />

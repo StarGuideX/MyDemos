@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 namespace PatternDemos.CompoundPatternDemo.Adapter
 {
     /// <summary>
-    /// 鸭子
+    /// 鹅
     /// </summary>
     public class Goose
     {

@@ -14,7 +14,18 @@ namespace PatternDemos.CompoundPatternDemo.Entity
         IQuackable _duck;
         private static int _numberOfQuacks;
 
-        public static int NumberOfQuacks { get => _numberOfQuacks; set => _numberOfQuacks = value; }
+        public static int NumberOfQuacks
+        {
+            get
+            {
+                return _numberOfQuacks;
+            }
+
+            set
+            {
+                _numberOfQuacks = value;
+            }
+        }
 
         public QuackCounter(IQuackable duck)
         {
@@ -24,8 +35,7 @@ namespace PatternDemos.CompoundPatternDemo.Entity
         public void Quack()
         {
             _duck.Quack();
-            _numberOfQuacks++;
+            NumberOfQuacks++;
         }
-
     }
 }
