@@ -73,7 +73,7 @@ namespace PatternDemos
             //Console.WriteLine(beverage3.GetDescription() + " $" + beverage.cost());
             #endregion
 
-            #region
+            #region 
             //PizzaStore nyPizzaStore = new NYStylePizzaStore();
             //Pizza pizza = nyPizzaStore.OrderPizza("Cheese");
             #endregion
@@ -234,9 +234,9 @@ namespace PatternDemos
             #endregion
 
             #region 复合模式验证
-            DuckSimuLator duckSimuLator = new DuckSimuLator();
-            AbstractDuckFactory duckFactory = new CountingDuckFactory();
-            duckSimuLator.Simnulate(duckFactory);
+            //DuckSimuLator duckSimuLator = new DuckSimuLator();
+            //AbstractDuckFactory duckFactory = new CountingDuckFactory();
+            //duckSimuLator.Simnulate(duckFactory);
             #endregion
             Console.ReadLine();
         }
@@ -253,7 +253,9 @@ namespace PatternDemos
             duck.Fly();
         }
 
-        //复合模式
+        /// <summary>
+        /// 复合模式用
+        /// </summary>
         internal class DuckSimuLator
         {
             internal void Simnulate(AbstractDuckFactory duckFactory)
